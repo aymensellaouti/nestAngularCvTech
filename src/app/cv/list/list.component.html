@@ -1,0 +1,10 @@
+<div class="alert alert-primary">
+  {{date|date|uppercase}}
+</div>
+<ol class="list-group">
+  <!--    (sendPersonne)="forwardPersonne($event)"-->
+  <app-item
+    *ngFor="let personne of personnes"
+    [personne]="personne"
+  ></app-item>
+</ol>

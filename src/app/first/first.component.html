@@ -1,0 +1,13 @@
+<p
+  [hidden]="isHidden"
+>{{name}} works!</p>
+
+<button class="btn btn-primary" (click)="hideShow()">
+  hide / show
+</button>
+
+<input
+  #monInput
+  type="text"
+  (change)="consoleMessage(monInput.value)">
+

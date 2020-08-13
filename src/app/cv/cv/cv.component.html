@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6">
+<!--    (itemSelectPersonne)="selectPersonne($event)"-->
+    <app-list></app-list>
+  </div>
+  <div class="col-md-6">
+<!--    [personne]="selectedPersonne"-->
+    <app-detail></app-detail>
+  </div>
+</div>
+<div class="alert alert-success">
+  {{nbItem}} sélectionnés
+</div>
+<!--<button (click)="logger()" class="btn btn-danger">-->
+<!--  Log moi-->
+<!--</button>-->

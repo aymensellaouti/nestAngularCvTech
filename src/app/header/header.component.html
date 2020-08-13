@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CNRPS CvTech</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link"
+          [routerLink]="['']"
+          [routerLinkActiveOptions]="{exact:true}"
+           routerLinkActive="active"
+        >Cv</a>
+      </li>
+      <li
+        *ngIf="authService.isAutheticated()"
+        class="nav-item">
+        <a class="nav-link"
+          [routerLink]="['cv/add']"
+           routerLinkActive="active"
+        >Add Cv</a>
+      </li>
+<li class="nav-item">
+        <a class="nav-link"
+          [routerLink]="['todo']"
+           routerLinkActive="active"
+        >Todo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLinkActive="active"
+           [routerLink]="['color']"
+        >Color</a>
+      </li>
+      <li
+        *ngIf="!authService.isAutheticated()"
+        class="nav-item">
+        <a class="nav-link"
+           routerLinkActive="active"
+           [routerLink]="['login']"
+        >Login</a>
+      </li>
+      <li
+        *ngIf="authService.isAutheticated()"
+        (click)="logout()"
+        class="nav-item">
+        <a class="nav-link"
+        >Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

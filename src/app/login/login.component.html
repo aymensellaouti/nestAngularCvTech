@@ -1,0 +1,33 @@
+<form #loginForm="ngForm">
+  email : <input
+  type="text"
+  class="form-control"
+  ngModel
+  required
+  email
+  #emailInput="ngModel"
+  name="email"
+>
+  <div
+    *ngIf="emailInput.invalid && emailInput.touched"
+    class="alert alert-danger">
+    Veuillez renseigner un email valid
+  </div>
+  password : <input
+  type="password"
+  required
+  class="form-control"
+  ngModel
+  minlength="4"
+  name="password"
+>
+</form>
+<button
+  [disabled]="loginForm.invalid"
+  (click)="login(loginForm)"
+  class="btn btn-primary">
+  Login
+</button>
+<div class="alert alert-danger" *ngIf="message.length">
+  {{message}}
+</div>

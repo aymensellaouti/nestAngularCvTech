@@ -1,0 +1,8 @@
+<p
+  [style.backgroundColor]="color"
+>pere works!</p>
+
+<app-fils
+  (sendDataToFather)="changeColor($event)"
+  [filsVar]="'valeur envoyée du père'"
+></app-fils>
