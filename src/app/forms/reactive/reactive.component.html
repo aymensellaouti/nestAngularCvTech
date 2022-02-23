@@ -1,0 +1,68 @@
+<h3 class="text-center">User Details</h3>
+<hr>
+<form [formGroup]="form">
+  <div formGroupName="credentials">
+    <div>
+      <label for="email">Email</label>
+      <input
+        class="form-control" type="email" id="email"
+        formControlName="email" placeholder="Enter email"/>
+    </div>
+    <div>
+      <label for="username">Password</label>
+      <input
+        class="form-control" type="text" id="password"
+        formControlName="password"  placeholder="Password"/>
+    </div>
+    <div class="field-message" *ngIf="form.get('credentials.password').errors?.passwordStrength">
+      Vérifier vos credentials
+    </div>
+  </div>
+  <div>
+    <label for="username">Username</label>
+    <input
+      class="form-control" type="text" id="username"
+      formControlName="username"  placeholder="Username"/>
+  </div>
+
+<!--  <div class="field-message" *ngIf="form.get('credentials.password').errors?.passwordStrength">-->
+<!--    Your password must have lower case, upper case and numeric characters.-->
+<!--  </div>-->
+  <div>
+    <label for="username">Age</label>
+    <input
+      class="form-control" type="number" id="age"
+      formControlName="age"  placeholder="Age"/>
+  </div>
+<!--  <div>-->
+
+
+<!--    <input class="form-control" type="radio" formControlName="userCategory" id="userCategory2" value="employee"/> Employee-->
+<!--    <input class="form-control" type="radio" formControlName="userCategory" id="userCategory1" value="student"/> Student-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="institution">Institution </label>-->
+<!--    <input class="form-control" type="text" id="institution" formControlName="institution" placeholder="Enter institution"/>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="company">Company</label>-->
+<!--    <input class="form-control" type="text" id="company" formControlName="company" placeholder="Enter company"/>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="salary">Salary</label>-->
+<!--    <input class="form-control" type="text" id="salary" formControlName="salary" placeholder="Enter salary"/>-->
+<!--  </div>-->
+  <div formArrayName="skills">
+    Skills <button (click)="addSkill()" class="btn btn-success">Add Skill</button>
+    <div
+      *ngFor="let skillControl of skills.controls; let i = index"
+      [formGroup]="skillControl">
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    (click)="process()">
+    Submit
+  </button>
+</form>

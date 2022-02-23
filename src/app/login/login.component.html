@@ -2,11 +2,11 @@
   email : <input
   type="text"
   class="form-control"
-  ngModel
+  [ngModel]="user.username"
   required
   email
   #emailInput="ngModel"
-  name="email"
+  name="username"
 >
   <div
     *ngIf="emailInput.invalid && emailInput.touched"
@@ -17,7 +17,7 @@
   type="password"
   required
   class="form-control"
-  ngModel
+  [ngModel]="user.password"
   minlength="4"
   name="password"
 >

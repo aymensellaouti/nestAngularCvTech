@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { ColorComponent } from './color/color.component';
 import { TwoWayComponent } from './two-way/two-way.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CardComponent } from './card/card.component';
 import { PereComponent } from './pere/pere.component';
 import { FilsComponent } from './fils/fils.component';
@@ -33,6 +33,7 @@ import { HttpExamplesComponent } from './http-examples/http-examples.component';
 import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
 import {AuthentificationInterceptorProvider} from './interceptors/auth-iterceptor';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
 
 @NgModule({
   declarations: [
@@ -63,14 +64,16 @@ import { FooterComponent } from './footer/footer.component';
     ObservableExampleComponent,
     HttpExamplesComponent,
     AddPersonneComponent,
-    FooterComponent
+    FooterComponent,
+    ReactiveComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [
     AuthentificationInterceptorProvider
   ],

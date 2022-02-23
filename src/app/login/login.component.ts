@@ -10,6 +10,10 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   message = '';
+  user =  {
+    username: 'init username',
+    password: 'fake password'
+  };
   constructor(
     private authService: AuthService,
     private router: Router
@@ -21,7 +25,7 @@ export class LoginComponent implements OnInit {
   login(loginForm: NgForm) {
     this.authService.login(loginForm.value).subscribe(
       (reponse) => {
-        localStorage.setItem('token', reponse.id);
+        localStorage.setItem('token', reponse.access_token);
         this.message = '';
         this.router.navigate(['']);
       },
